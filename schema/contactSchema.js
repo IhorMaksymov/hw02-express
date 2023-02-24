@@ -5,5 +5,12 @@ const scheme = Joi.object({
   phone: Joi.string().required(),
   email: Joi.string().required(),
 });
+
+const updateFavoriteById = Joi.object({
+  favorite: Joi.bool().required(),
+})
     
-module.exports = { scheme };
+module.exports = {
+  scheme,
+  updateFavoriteById,
+};
