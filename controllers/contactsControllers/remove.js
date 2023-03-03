@@ -1,5 +1,5 @@
-const { HttpError, ctrlWrapper } = require('../helpers');
-const Contact = require('../models/contactSchema');
+const { HttpError, ctrlWrapper } = require('../../helpers');
+const Contact = require('../../models/contactSchema');
 
 const remove = async (req, res) => {
     const { id } = req.params;

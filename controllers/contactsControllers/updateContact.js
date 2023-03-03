@@ -1,8 +1,8 @@
-const { HttpError, ctrlWrapper } = require('../helpers');
-const Contact = require('../models/contactSchema');
+const { HttpError, ctrlWrapper } = require('../../helpers');
+const Contact = require('../../models/contactSchema');
 
 
-const updateFavorite = async (req, res) => {
+const updateContact = async (req, res) => {
     const { id } = req.params;
     const upContact = await Contact.findByIdAndUpdate(id, req.body, { new: true });
     if (!upContact) {
@@ -12,5 +12,5 @@ const updateFavorite = async (req, res) => {
 }
 
 module.exports = {
-    updateFavorite: ctrlWrapper(updateFavorite),
+    updateContact: ctrlWrapper(updateContact),
 };
