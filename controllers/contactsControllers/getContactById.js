@@ -1,5 +1,5 @@
-const Contact = require('../models/contactSchema');
-const { ctrlWrapper, HttpError } = require('../helpers');
+const Contact = require('../../models/contactSchema');
+const { ctrlWrapper, HttpError } = require('../../helpers');
 
 const getContactById = async (req, res) => {
     const { id } = req.params;

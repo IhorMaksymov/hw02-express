@@ -9,20 +9,21 @@ const {
   updateContact,
   updateFavorite,
   remove
-} = require('../../controllers');
+} = require('../../controllers/contactsControllers');
 
 const {
   isValidId,
   validateBody,
+  authCurrent
 } = require('../../middlewares');
 
 const { scheme, updateFavoriteById } = require('../../schema/contactSchema');
 
-router.get('/', listContacts);
+router.get('/', authCurrent, listContacts);
 
 router.get('/:id', isValidId, getContactById);
 
-router.post('/', validateBody(scheme), addContact);
+router.post('/', authCurrent, validateBody(scheme), addContact);
 
 router.put('/:id', isValidId, validateBody(scheme), updateContact);
 
