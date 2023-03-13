@@ -20,6 +20,10 @@ const userSchema = Schema({
         type: String,
         default: null,
     },
+    avatarURL: {
+        type: String,
+        require: true,
+    },
 }, { versionKey: false, timestamps: true });
 
 userSchema.methods.comparePassword = function (password) {
